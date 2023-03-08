@@ -1,12 +1,19 @@
-// Example: https://my-cloud-run-service.run.app/books/delete/12345
-const url = process.env.FUNCTION_URL;
-
-// Example (Cloud Run): https://my-cloud-run-service.run.app/
-const audience = `https://${process.env.K_SERVICE}-run-service.run.app/`;
-const targetAudience = audience;
-
+const express = require('express');
 const {GoogleAuth} = require('google-auth-library');
+
+const app = express();
 const auth = new GoogleAuth();
+const url = process.env.FUNCTION_URL;
+const targetAudience = url;
+
+app.get('/', (req: any, res: { send: (arg0: string) => void; }) => {
+  request();
+});
+
+const port = 8080;
+app.listen(port, () => {
+  console.log(`helloworld: listening on port ${port}`);
+});
 
 async function request() {
   console.info(`request ${url} with target audience ${targetAudience}`);
