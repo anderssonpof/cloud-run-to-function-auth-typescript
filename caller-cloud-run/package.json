@@ -1,0 +1,15 @@
+{
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npx tsc",
+    "prestart": "npm run build",
+    "gcp-build": "npm run build"
+  },
+  "dependencies": {
+    "google-auth-library": "^8.7.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.14.6"
+  }
+}
