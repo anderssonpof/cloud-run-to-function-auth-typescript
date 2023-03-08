@@ -11,7 +11,7 @@ gcloud functions delete hello-function \
     --project "$PROJECT_ID"
 
 echo "deleting cloud run service"
-gcloud run delete caller-cloud-run \
+gcloud run services delete caller \
     --region "$REGION" \
     --project "$PROJECT_ID"
 
